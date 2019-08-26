@@ -1,10 +1,21 @@
 /* main.js */
 
+// menu js
 $(function(){
     $("header .menu-btn").on('click', function(){
         $('.hold').toggleClass('show');
+        $('.searchtop').removeClass('show');
     });
+});
+$(function(){
+    $("header .find-btn").on('click', function(){
+        $('.searchtop').toggleClass('show');
+        $('.hold').removeClass('show');
+    });
+});
+     // product
      // 문서 실행 시 상품 전체 보기
+     $(function(){
      $('#product li').addClass('show'); // 초기 상태
 
      var col_num = 4; // 칼럼수 
@@ -57,24 +68,32 @@ $(function(){
      });
  
      $(".health-product").on("click", function () {
-         $('#product li').removeClass('show');
+         $('#product li'    ).removeClass('show');
  
          $('#product li[class*="health"]').addClass('show');
          col_init();
  
      });
 });
+    //  customer
 $(function(){
-    $("header .find-btn").on('click', function(){
-        $('.searchtop').toggleClass('show');
-    });
-});
+    var speed = 200;
+    var easing ='easeOutExpo';     // jquery UI 필요
+
+    // 패널 열림
+    $('dl dt').on('click',function(){
+        $(this)
+        .next()
+        .slideToggle(speed,easing);
+    })
+})
+    // bx-slider
     $(function () {
       // bx slider 초기화
       $('.slider').bxSlider({
         // 옵션
         mode: "fade", // 효과
-        auto: true, // 자동재생(true/false)
+        auto: false, // 자동재생(true/false)
         pause: 4500, // 대기시간(ms),
         pager: true, // 하단 인디케이터 표시
         controls: false, // 좌우 화살표
@@ -85,4 +104,25 @@ $(function(){
         maxSlides: 1,
         slideWidth: 1920,
       });
+    })
+    // scrollTop
+    $(function(){
+    $(document, window).scroll(function () {
+        var s = $(document).scrollTop();
+        console.log(s);
+        if (s > 1618) {
+            $('.content2-box4').addClass('show');
+            $('.content2-box4-txt').addClass('show');
+            $('.content2-box3').addClass('show');
+            $('.content2-box3-txt').addClass('show');
+            $('.content2-box2').addClass('show');
+            $('.content2-box2-txt').addClass('show');
+            $('.content2-box1').addClass('show');
+            $('.content2-box1-txt').addClass('show');
+
+
+            }
+
+        });
+
     })

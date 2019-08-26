@@ -22,12 +22,32 @@
     <header>
         <a href="index.html"><img src="images/header-logo1.png" alt="logo"></a>
         <button class="menu-btn"><img src="images/menu-icon.png" alt=""></button>
+        <button class="find-btn">
+            <img src="images/find.png" alt="find">
+        </button>
         <ul class="lang">
             <li><a href="#">KOR</a><span>|</span></li>
             <li><a href="#">ENG</a></li>
         </ul>
     </header>
 
+    <!-- search-icon -->
+    <div class="searchtop">
+            <p class="searchtop-container">
+                <span class="inp">
+                    <input type="text" name="goods_search_word" id="goods_search_word" class="input_txt"
+                        placeholder="검색할 제품명을 입력해 주세요." onkeyup="enters(function(){ topGoodsSearch(); })">
+                </span>
+                <button class="btn" onclick="topGoodsSearch()">
+                    <img src="images/search.png" alt="검색" class="img-pc">
+                </button>
+                <button class="close" onclick="headSearchFn.close();"><img src="images/close.png" alt="닫기">
+                </button>
+            </p>
+        </div>
+        </div>
+    
+    <!-- main-menu -->
     <div class="hold">
         <nav id="main-menu">
             <ul class="depth1">
